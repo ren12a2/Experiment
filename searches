@@ -1,0 +1,122 @@
+// linear search
+#include<stdio.h>
+int linear_search(int[],int,int);
+int main(){
+	int length,key,i;
+	printf("enter the length of the array");
+	scanf("%d",&length);
+	int a[length];
+	printf("enter the elements of the array in ascending order");
+	for(i=0;i<length;i++){
+		scanf("%d",&a[i]);
+		}
+	printf("enter the element that you want to find");
+	scanf("%d",&key);
+	int res=linear_search(a,length,key);
+	if(res==-1){
+		printf("element not found");
+		}
+	else{
+		printf("the given element was found at the position %d",res);
+		}
+	return 0;
+	}
+int linear_search(int a[],int length,int key){
+	int i;
+	for(i=0;i<length;i++){
+		if(key==a[i]){
+			return i+1;
+			}}
+	return -1;
+	}
+  
+  // binary search
+#include<stdio.h>
+int binary_search(int[],int,int);
+int main(){
+	int length,key,i;
+	printf("enter the length of the array");
+	scanf("%d",&length);
+	int a[length];
+	printf("enter the elements of the array in ascending order");
+	for(i=0;i<length;i++){
+		scanf("%d",&a[i]);
+		}
+	printf("enter the element that you want to find");
+	scanf("%d",&key);
+	int res=binary_search(a,length,key);
+	if(res==-1){
+		printf("element not found");
+		}
+	else{
+		printf("the given element was found at the position %d",res);
+		}
+	return 0;
+	}
+int binary_search(int a[],int length,int key){
+	int high=length-1,low=0,mid;
+	while(high>=low){
+		mid=(high+low)/2;
+		if(key==a[mid])
+			return mid+1;
+		else if(key<a[mid]){
+			high=mid-1;
+			}
+		else
+			low=mid+1;
+			}
+	return -1;
+	}
+  
+  // bubble sort
+#include<stdio.h>
+void bubble_sort(int[],int);
+int main(){
+	int i,length;
+	printf("enter the length of the array");
+	scanf("%d",&length);
+	int a[length];
+	printf("enter the elements of the array");
+	for(i=0;i<length;i++){
+		scanf("%d",&a[i]);
+		}
+	bubble_sort(a,length);
+	return 0;
+	}
+void bubble_sort(int a[],int length){
+	int i,j,temp;
+	for(i=0;i<length-1;i++){
+		for(j=0;j<length-i-1;j++){
+			if(a[j]>a[j+1]){
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;}}}
+	printf("the arranged array elements are");
+	for(i=0;i<length;i++){
+		printf("%5d",a[i]);
+		}
+	return;
+	}
+  
+  // No of lines, words and letters in given paragraph:
+#include<stdio.h>
+void main(){
+	char para[50];
+	int letter=0,word=1,line=0,i;
+	printf("enter a paragraph, to terminate it, type '$'");
+	scanf("%[^$]s",para);
+	for(i=0;para[i]!='\0';i++){
+		if(para[i]!=' ' && para[i]!='.'){
+			letter++;}
+		if(para[i]==' '){
+			word++;}
+		if(para[i]=='.'){
+			line++;}
+		}
+	printf("the number of letters in the given paragraph is %d\n",letter);
+	printf("the number of words in the given paragraph is %d\n",word);
+	printf("the number of sentences in the given paragraph is %d",line);
+	return;
+	}
+	
+		
