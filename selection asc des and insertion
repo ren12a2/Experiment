@@ -1,0 +1,96 @@
+// selection sort ascending 
+#include<stdio.h>
+void sel(int a[], int);
+int main(){
+    int i,size;
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+    printf("Enter random numbers:\n");
+    int a[size];
+    for(i=0;i<size;i++){
+        scanf("%d", &a[i]);}
+        sel(a,size);
+    return 0;
+}
+
+void sel(int a[], int size){
+    int i,j,temp,min;
+    for(i=0;i<size-1;i++){
+        min=i;
+        for(j=i+1;j<size;j++){
+            if(a[j]<a[min])
+            min=j;
+        }
+         temp=a[i];
+        a[i]=a[min];
+        a[min]=temp;
+    }
+    for(i=0;i<size;i++){
+        printf("%5d", a[i]);
+    }
+    return;
+}
+// selection sort descending 
+#include<stdio.h>
+void sel(int a[], int);
+int main(){
+    int i,size;
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+    printf("Enter random numbers:\n");
+    int a[size];
+    for(i=0;i<size;i++){
+        scanf("%d", &a[i]);}
+        sel(a,size);
+    return 0;
+}
+
+void sel(int a[], int size){
+    int i,j,temp,max;
+    for(i=0;i<size-1;i++){
+        max=i;
+        for(j=i+1;j<size;j++){
+            if(a[j]>a[max])
+            max=j;
+        }
+         temp=a[i];
+        a[i]=a[max];
+        a[max]=temp;
+    }
+    for(i=0;i<size;i++){
+        printf("%5d", a[i]);
+    }
+    return;
+}
+// insertion sort
+#include<stdio.h>
+void insertion(int a[], int);
+int main(){
+    int i,size;
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+    printf("Enter random numbers:\n");
+    int a[size];
+    for(i=0;i<size;i++){
+        scanf("%d", &a[i]);}
+     insertion(a,size);
+    return 0;
+}
+
+void insertion(int a[], int size){
+    int i,j,key;
+    for(i=1;i<size;i++){
+        key=a[i];
+        j=i-1;
+        while(j>=0 && a[j]>key){
+            a[j+1]=a[j];
+            j=j-1;
+        }
+         a[j+1]=key;
+    }
+    printf("insertion sort:\n");
+    for(i=0;i<size;i++){
+        printf("%5d", a[i]);
+    }
+    return;
+}
