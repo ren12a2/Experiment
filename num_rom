@@ -1,0 +1,58 @@
+// num to roman
+#include <stdio.h>
+void roman(int);
+int main() {
+    int num;
+    printf("Enter number: ");
+    scanf("%d", &num);
+    roman(num);
+    return 0;
+}
+
+void roman(int num){
+    int T,U;
+    T=((num/10)%10)*10;
+    U=((num/1)%10)*1;
+   if(T==10)
+   printf("X");
+   
+   if(T==20)
+   printf("XX");
+   
+   if(T==30)
+   printf("XXX");
+   
+   if(T==40)
+   printf("XL");
+   
+   if(T==50)
+   printf("L");
+   
+   if(U==1)
+   printf("I");
+   
+   if(U==2)
+   printf("II");
+   
+   if(U==3)
+   printf("III");
+   
+   if(U==4)
+   printf("IV");
+   
+   if(U==5)
+   printf("V");
+   
+   if(U==6)
+   printf("VI");
+   
+   if(U==7)
+   printf("VII");
+   
+   if(U==8)
+   printf("VIII");
+  
+   if(U==9)
+   printf("IX");
+return;
+}
