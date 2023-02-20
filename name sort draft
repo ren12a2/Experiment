@@ -1,0 +1,18 @@
+// sorting names
+#include <stdio.h>
+void name_sort(char[],int);
+int main(){
+    int size,i;
+    printf("Total no of names: ");
+    scanf("%d", &size);
+    char names[size];
+    printf("Enter Names:\n");
+    for(i=0;i<size;i++){
+        scanf("%c", names[i]);
+    }
+        for(i=0;i<size;i++){
+        printf("%c", names[i]);
+    }
+
+    return 0;
+}
